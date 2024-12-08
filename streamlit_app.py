@@ -6,7 +6,7 @@ import numpy as np
 
 st.set_page_config(
     page_title="Aplikasi Deteksi Pneumonia",
-    page_icon="https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/682/2023/11/11/1693494180-58087-1024x576-3354450172.png"  # Anda juga dapat menggunakan path ke file icon, misalnya "icon.png"
+    page_icon="https://cdn3.iconfinder.com/data/icons/feather-5/24/eye-256.png"  # Anda juga dapat menggunakan path ke file icon, misalnya "icon.png"
 )
 
 # Fungsi untuk memuat model CNN
@@ -38,7 +38,7 @@ if uploaded_file is not None:
     st.image(image, caption="Gambar yang diunggah", use_column_width=True)
 
     # Load model
-    model_path = "cnnparu.hdf5"  # Ganti dengan path model Anda
+    model_path = "cnnparu_2.hdf5"  # Ganti dengan path model Anda
     model = load_cnn_model(model_path)
 
     # Lakukan prediksi
