@@ -6,7 +6,7 @@ import numpy as np
 
 st.set_page_config(
     page_title="Aplikasi Deteksi Pneumonia",
-    page_icon="https://asetto.nawalakarsa.id/imeji/20231124073529/N5.jpg"  # Anda juga dapat menggunakan path ke file icon, misalnya "icon.png"
+    page_icon="https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/682/2023/11/11/1693494180-58087-1024x576-3354450172.png"  # Anda juga dapat menggunakan path ke file icon, misalnya "icon.png"
 )
 
 # Fungsi untuk memuat model CNN
@@ -45,7 +45,7 @@ if uploaded_file is not None:
     target_size = (48, 48)  # Sesuaikan dengan model Anda
     predictions = predict_image(model, image, target_size)
 
-    label_names = {0:'NORMAL',1:'PNEUMONIA'}
+    label_names = {0:'Paru Paru Anda NORMAL',1:'Paru Paru Anda Terkena PNEUMONIA'}
     predicted_label = label_names[predictions]
 
     
