@@ -4,6 +4,11 @@ from tensorflow.keras.preprocessing.image import img_to_array, load_img
 from PIL import Image
 import numpy as np
 
+st.set_page_config(
+    page_title="Aplikasi Deteksi Pneumonia",
+    page_icon="https://asetto.nawalakarsa.id/imeji/20231124073529/N5.jpg"  # Anda juga dapat menggunakan path ke file icon, misalnya "icon.png"
+)
+
 # Fungsi untuk memuat model CNN
 @st.cache_resource
 def load_cnn_model(model_path):
