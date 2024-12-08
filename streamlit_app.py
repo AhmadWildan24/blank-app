@@ -33,7 +33,7 @@ if uploaded_file is not None:
     st.image(image, caption="Gambar yang diunggah", use_column_width=True)
 
     # Load model
-    model_path = "/workspaces/blank-app/cnnparu.hdf5"  # Ganti dengan path model Anda
+    model_path = "cnnparu.hdf5"  # Ganti dengan path model Anda
     model = load_cnn_model(model_path)
 
     # Lakukan prediksi
