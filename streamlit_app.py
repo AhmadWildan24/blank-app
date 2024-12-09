@@ -26,9 +26,6 @@ def predict_image(model, image, target_size):
     predicted_class = np.argmax(predictions)
     return predicted_class
 
-# Konfigurasi Streamlit
-st.title("Aplikasi Deteksi Gambar menggunakan CNN")
-
 # Upload gambar
 uploaded_file = st.file_uploader("Unggah Gambar", type=["jpg", "jpeg", "png"])
 
