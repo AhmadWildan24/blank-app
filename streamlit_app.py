@@ -6,8 +6,8 @@ from PIL import ImageOps
 import numpy as np
 
 st.set_page_config(
-    page_title="Aplikasi Deteksi Pneumonia",
-    page_icon="https://cdn3.iconfinder.com/data/icons/feather-5/24/eye-256.png"  # Anda juga dapat menggunakan path ke file icon, misalnya "icon.png"
+    page_title="Sistem Klasifikasi Penyakit Paru",
+    page_icon="https://cdn3.iconfinder.com/data/icons/pandemic-solid-keep-healthy-routine/512/Virus_lung_infection-256.png"  # Anda juga dapat menggunakan path ke file icon, misalnya "icon.png"
 )
 
 # Fungsi untuk memuat model CNN
