@@ -2,6 +2,7 @@ import streamlit as st
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import img_to_array, load_img
 from PIL import Image
+from PIL import ImageOps
 import numpy as np
 
 st.set_page_config(
@@ -17,6 +18,8 @@ def load_cnn_model(model_path):
 
 # Fungsi untuk memproses dan memprediksi gambar
 def predict_image(model, image, target_size):
+    grayscale_image = ImageOps.grayscale(image)  # Konversi ke grayscale
+    image = grayscale_image.convert('RGB')
     # Resize gambar ke ukuran yang diterima model
     image = image.resize(target_size)
     image_array = img_to_array(image) / 255.0  # Normalisasi
@@ -33,19 +36,22 @@ uploaded_file = st.file_uploader("Unggah Gambar", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
     # Tampilkan gambar yang diunggah
-    image = Image.open(uploaded_file).convert('RGB')  # Pastikan gambar jadi RGB
+    image = Image.open(uploaded_file)  # Buka gambar
+    grayscale_image = ImageOps.grayscale(image)  # Konversi ke grayscale
+    image = grayscale_image.convert('RGB')  # Ubah kembali ke 3 channel RGB
+
 
     st.image(image, caption="Gambar yang diunggah", use_column_width=True)
 
     # Load model
-    model_path = "cnnparu_2.hdf5"  # Ganti dengan path model Anda
+    model_path = "model4parucnn.keras"  # Ganti dengan path model Anda
     model = load_cnn_model(model_path)
-
+ 
     # Lakukan prediksi
     target_size = (48, 48)  # Sesuaikan dengan model Anda
     predictions = predict_image(model, image, target_size)
 
-    label_names = {0:'Paru Paru Anda NORMAL',1:'Paru Paru Anda Terkena PNEUMONIA'}
+    label_names = {0:'Selamat Paru Paru Anda Covid',1:'Paru Paru Anda NORMAL', 2:'Paru Paru Anda Terkena Pneumonia', 3:'Paru Paru Anda Terkena Tuberculosis'}
     predicted_label = label_names[predictions]
 
     
