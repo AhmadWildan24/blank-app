@@ -46,7 +46,7 @@ if uploaded_file is not None:
     target_size = (48, 48)  # Sesuaikan dengan model Anda
     predictions = predict_image(model, image, target_size)
 
-    label_names = {0:'Selamat Paru Paru Anda Covid',1:'Paru Paru Anda NORMAL', 2:'Paru Paru Anda Terkena Pneumonia', 3:'Paru Paru Anda Terkena Tuberculosis'}
+    label_names = {0:'Paru Paru Anda Terkena Covid',1:'Paru Paru Anda NORMAL', 2:'Paru Paru Anda Terkena Pneumonia', 3:'Paru Paru Anda Terkena Tuberculosis'}
     predicted_label = label_names[predictions]
 
     
