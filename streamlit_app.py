@@ -27,7 +27,7 @@ def predict_image(model, image, target_size):
     return predicted_class
 
 # Konfigurasi Streamlit
-st.title("Aplikasi Deteksi Gambar menggunakan CNN")
+st.title("Aplikasi Deteksi Penyakit Pada Paru Paru menggunakan CNN")
 
 # Upload gambar
 uploaded_file = st.file_uploader("Unggah Gambar", type=["jpg", "jpeg", "png"])
