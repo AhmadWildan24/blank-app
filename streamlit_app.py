@@ -18,8 +18,6 @@ def load_cnn_model(model_path):
 
 # Fungsi untuk memproses dan memprediksi gambar
 def predict_image(model, image, target_size):
-    grayscale_image = ImageOps.grayscale(image)  # Konversi ke grayscale
-    image = grayscale_image.convert('RGB')
     # Resize gambar ke ukuran yang diterima model
     image = image.resize(target_size)
     image_array = img_to_array(image) / 255.0  # Normalisasi
@@ -37,9 +35,6 @@ uploaded_file = st.file_uploader("Unggah Gambar", type=["jpg", "jpeg", "png"])
 if uploaded_file is not None:
     # Tampilkan gambar yang diunggah
     image = Image.open(uploaded_file)  # Buka gambar
-    grayscale_image = ImageOps.grayscale(image)  # Konversi ke grayscale
-    image = grayscale_image.convert('RGB')  # Ubah kembali ke 3 channel RGB
-
 
     st.image(image, caption="Gambar yang diunggah", use_column_width=True)
 
