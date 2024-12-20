@@ -19,6 +19,8 @@ def load_cnn_model(model_path):
 # Fungsi untuk memproses dan memprediksi gambar
 def predict_image(model, image, target_size):
     # Resize gambar ke ukuran yang diterima model
+    grayscale_image = ImageOps.grayscale(image)
+    image = grayscale_image.convert('RGB')
     image = image.resize(target_size)
     image_array = img_to_array(image) / 255.0  # Normalisasi
     image_array = np.expand_dims(image_array, axis=0)  # Tambahkan dimensi batch
